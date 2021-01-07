@@ -1,0 +1,12 @@
+main.tf
+--- old/main.tf
++++ new/main.tf
+@@ -28,7 +28,7 @@
+ resource "aws_instance" "import_example" {
+ 
+   provider = aws
+-       count    = 2
++  count    = 2
+ 
+   ami           = "ami-0a0ad6b70e61be944"
+   instance_type = "t2.micro"
