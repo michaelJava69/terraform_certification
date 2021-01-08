@@ -1,28 +1,28 @@
 variable "instance_security_group_name" {
   description = "The name of security group for EC2 load balanced instances"
-  type = string
-  default = "terraform-awslaunch-instance"
+  type        = string
+  default     = "terraform-awslaunch-instance"
 }
 
 
 variable "az" {
-  default = ["us-east-2b","us-east-2c","us-east-2d"]
+  default = ["us-east-2b", "us-east-2c", "us-east-2d"]
 }
 
 variable "server_port" {
   default = "80"
-  type =  number
+  type    = number
 }
 
-variable "server_ssh"{
+variable "server_ssh" {
   default = "22"
-  type =  number
+  type    = number
 
 }
 
 variable "user_data" {
   description = "user data for apache script"
-  default = <<-EOF
+  default     = <<-EOF
 #!/bin/bash
 sudo yum -y update
 sudo yum install -y httpd
