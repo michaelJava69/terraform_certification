@@ -37,10 +37,11 @@ resource "aws_instance" "example2" {
 }
 
 
-## remote-exec provisioner
+## remote-exec provisioner in line
 
 
-/*
+
+
 
 resource "aws_instance" "example" {
   provider = "aws.califonia"
@@ -105,6 +106,9 @@ resource "aws_security_group" "testmysg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+
+/*
 
 resource "null_resource" "prov_null" {
   triggers = {

@@ -39,6 +39,17 @@ resource "aws_instance" "example2" {
 
 ## remote-exec provisioner
 
+/*
+
+resource "aws_instance" "example" {
+  provider = aws.califonia
+
+  ami = "ami-0bcc094591f354be2"
+  instance_type = "t2.micro"
+}
+
+*/
+
 
 /*
 
