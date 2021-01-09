@@ -1,12 +1,14 @@
 provider "aws" {
-  region = "us-east-2"
+  region  = "us-east-2"
   version = "~> 2.0"
 }
 
 
+
+##
 provider "aws" {
-  alias = "califonia"
-  region = "us-east-2"
+  alias   = "califonia"
+  region  = "us-east-2"
   version = "~> 2.0"
 }
 
