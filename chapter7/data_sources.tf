@@ -6,3 +6,10 @@ data "aws_availability_zones" "azs" {
     values = ["us-east-2*"]
   }
 }
+
+
+
+data "aws_ami" "amazonlinux" {
+   ownwers = []
+
+}

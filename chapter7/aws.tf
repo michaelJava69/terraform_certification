@@ -3,7 +3,7 @@ resource "aws_launch_configuration" "awslaunch" {
 
   name = "aws_launch"
   image_id = "ami-0a0ad6b70e61be944"
-  instance_type = "t2.micro"
+  instance_type = var.awsinstance_type[0]
 
   security_groups = [aws_security_group.instance.id]
 

@@ -9,8 +9,15 @@ variable "aws_launchcfg"  {
 variable "aws_image" {
   description = "amazon linux image for region Ohio"
   type = string
-  default = 
+  default = "ami-0a0ad6b70e61be944"
 
+}
+
+
+variable "awsinstance_type"  {
+   description = "aws instance types"
+   default = ["t2.micro", "t2.nano", "t2.large" ] 
+   type = list
 }
 
 

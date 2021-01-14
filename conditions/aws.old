@@ -8,15 +8,7 @@
 
 resource "aws_instance" "example2" {
   provider = aws
-
-  ## lets refer to a data source for the ami image instead of looking 
-  ## up on console and hardcoding in variables/ here
-  
-  
-  # ami = "ami-0c55b159cbfafe1f0"
-    ami = data.aws_ami.amazonlinux.id
-
-
+  ami = "ami-0c55b159cbfafe1f0"
   instance_type = "t2.micro"
 
   provisioner "local-exec" {
@@ -31,20 +23,13 @@ resource "aws_instance" "example2" {
 
 resource "aws_instance" "instance" {
 
-  ###
-  # lets refer to a data source for the ami image instead of looking
-  # up on console and hardcoding in variables/ here
-  ######
- 
-  # ami           = "ami-0a0ad6b70e61be944"
-  ami = data.aws_ami.amazonlinux.id
-
+  ami      = "ami-0a0ad6b70e61be944"
   instance_type = "t2.micro"
 
   # for aws_launch_configuration
   # security_groups = [aws_security_group.instance.id]
-
-  vpc_security_group_ids = [aws_security_group.instance.id]
+  
+  vpc_security_group_ids =    [aws_security_group.instance.id]
 
   key_name  = aws_key_pair.ssh.key_name
   user_data = var.user_data
@@ -61,7 +46,7 @@ resource "aws_security_group" "instance" {
 
   ##
 
-  /*
+/*
   ingress {
     from_port   = var.server_port
     to_port     = var.server_port
@@ -102,14 +87,14 @@ resource "aws_key_pair" "ssh" {
 
 resource "null_resource" "example2" {
 
-  triggers = {
-    uuid = uuid()
-
-  }
+  triggers  = {
+     uuid = uuid()  
+  
+  }  
 
   provisioner "local-exec" {
     command = " echo self id is ${self.id}  and uuid is $(uname -smp) >> michael.txt"
-
+    
   }
 
 }
